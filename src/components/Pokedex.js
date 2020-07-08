@@ -16,9 +16,19 @@ class Pokedex extends Component {
   }
 
   render() {
+    // map through the array and create a Pokecard for each
+    let allPokemon = this.props.pokemonData.map(pokemon =>
+      <Pokecard 
+        name={pokemon.name}
+        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+        type={pokemon.type}
+        base_experience={pokemon.base_experience}
+      />
+    );
+
     return(
       <div>
-        <Pokecard />
+        {allPokemon}
       </div>
     );
   }

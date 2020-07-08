@@ -1,13 +1,12 @@
 import React from 'react';
 
-function Pokecard() {
+function Pokecard(props) {
   return (
     <div>
-      <h1>This is a Pokecard</h1>
-      <h2>Charmander</h2>
-      <h2>Image</h2>
-      <h2>Type</h2>
-      <h2>Experience</h2>
+      <h1>{props.name}</h1>
+      <img src={props.image} />
+      <h2>Type: {props.type}</h2>
+      <h2>Experience: {props.base_experience}</h2>
     </div>
   );
 }
